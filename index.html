@@ -8,580 +8,13 @@
       content="Firmeza e Humanidade - Nº 002. Loja Maçônica com tradição, fraternidade e valores humanistas."
     />
     <title>Firmeza e Humanidade - Nº 002</title>
-    <style>
-      :root {
-        --navy-900: #071a2d;
-        --navy-800: #0d2541;
-        --navy-700: #18395d;
-        --gold-500: #c7a76a;
-        --gold-400: #d7bb7d;
-        --gold-200: #f2e5c4;
-        --ice-100: #f5f7f9;
-        --ice-200: #edf1f4;
-        --text-900: #1b2430;
-        --text-700: #536072;
-        --white: #ffffff;
-        --shadow-soft: 0 18px 45px rgba(7, 26, 45, 0.12);
-        --shadow-card: 0 12px 30px rgba(8, 26, 45, 0.08);
-        --container: min(1120px, calc(100% - 2rem));
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        background: var(--ice-100);
-        color: var(--text-900);
-        line-height: 1.7;
-      }
-
-      img {
-        display: block;
-        width: 100%;
-        max-width: 100%;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      button,
-      input,
-      textarea {
-        font: inherit;
-      }
-
-      .container {
-        width: var(--container);
-        margin-inline: auto;
-      }
-
-      .section {
-        padding: 4.5rem 0;
-      }
-
-      .section-heading {
-        text-align: center;
-        margin-bottom: 2rem;
-      }
-
-      .eyebrow {
-        display: inline-block;
-        margin-bottom: 0.8rem;
-        font-size: 0.75rem;
-        letter-spacing: 0.2rem;
-        text-transform: uppercase;
-        color: var(--gold-500);
-        font-weight: 700;
-      }
-
-      .section-heading h2 {
-        margin: 0;
-        color: var(--navy-900);
-        font-size: clamp(2.1rem, 4vw, 3rem);
-        line-height: 1.15;
-      }
-
-      .site-header {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        background: rgba(7, 26, 45, 0.94);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(199, 167, 106, 0.25);
-      }
-
-      .nav-wrap {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        min-height: 78px;
-        position: relative;
-      }
-
-      .brand {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.8rem;
-        color: var(--white);
-      }
-
-      .brand-mark {
-        display: grid;
-        place-items: center;
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        border: 1px solid rgba(199, 167, 106, 0.8);
-        background: linear-gradient(135deg, rgba(199, 167, 106, 0.18), rgba(255, 255, 255, 0.04));
-        color: var(--gold-400);
-        font-weight: 700;
-        font-size: 1.1rem;
-      }
-
-      .brand-text {
-        display: flex;
-        flex-direction: column;
-        line-height: 1.15;
-      }
-
-      .brand-text strong {
-        font-size: 0.9rem;
-        letter-spacing: 0.08rem;
-        text-transform: uppercase;
-      }
-
-      .brand-text small {
-        font-size: 0.63rem;
-        letter-spacing: 0.11rem;
-        color: rgba(255, 255, 255, 0.72);
-        text-transform: uppercase;
-      }
-
-      .nav-toggle {
-        width: 46px;
-        height: 46px;
-        display: inline-flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 0.28rem;
-        background: transparent;
-        border: 1px solid rgba(199, 167, 106, 0.5);
-        border-radius: 8px;
-        padding: 0 0.7rem;
-        cursor: pointer;
-      }
-
-      .nav-toggle span {
-        display: block;
-        width: 100%;
-        height: 2px;
-        background: var(--white);
-        border-radius: 999px;
-      }
-
-      .site-nav {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        display: none;
-        flex-direction: column;
-        gap: 0.4rem;
-        background: rgba(7, 26, 45, 0.98);
-        padding: 1rem 0.5rem 1.2rem;
-        border-top: 1px solid rgba(199, 167, 106, 0.18);
-        box-shadow: var(--shadow-soft);
-      }
-
-      .site-nav.is-open {
-        display: flex;
-      }
-
-      .site-nav a {
-        color: var(--white);
-        padding: 0.5rem 1rem;
-        border-radius: 8px;
-        transition: color 0.25s ease, background 0.25s ease;
-      }
-
-      .site-nav a:hover,
-      .site-nav a:focus-visible {
-        color: var(--gold-400);
-        background: rgba(255, 255, 255, 0.02);
-      }
-
-      .hero {
-        position: relative;
-        min-height: 620px;
-        display: flex;
-        align-items: center;
-        background:
-          linear-gradient(rgba(7, 26, 45, 0.72), rgba(7, 26, 45, 0.82)),
-          url('https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      }
-
-      .hero-inner {
-        display: grid;
-        gap: 2rem;
-        padding: 4rem 0;
-      }
-
-      .hero-copy {
-        max-width: 710px;
-      }
-
-      .hero-copy .intro {
-        display: inline-block;
-        margin-bottom: 1rem;
-        font-size: 0.74rem;
-        letter-spacing: 0.2rem;
-        text-transform: uppercase;
-        color: var(--gold-400);
-        font-weight: 700;
-      }
-
-      .hero-copy h1 {
-        margin: 0 0 1rem;
-        font-size: clamp(2.6rem, 6vw, 5rem);
-        line-height: 0.95;
-        letter-spacing: -0.04em;
-        color: var(--white);
-      }
-
-      .hero-copy p {
-        margin: 0;
-        color: rgba(255, 255, 255, 0.82);
-        font-size: 1.08rem;
-        max-width: 620px;
-      }
-
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        margin-top: 1.8rem;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 52px;
-        padding: 0.8rem 1.5rem;
-        border-radius: 999px;
-        font-weight: 700;
-        letter-spacing: 0.03rem;
-        border: 1px solid transparent;
-        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-      }
-
-      .btn:hover,
-      .btn:focus-visible {
-        transform: translateY(-2px);
-      }
-
-      .btn-primary {
-        background: linear-gradient(135deg, var(--gold-400), var(--gold-500));
-        color: var(--navy-900);
-        box-shadow: 0 18px 32px rgba(199, 167, 106, 0.25);
-      }
-
-      .btn-secondary {
-        background: rgba(255, 255, 255, 0.04);
-        color: var(--white);
-        border-color: rgba(255, 255, 255, 0.3);
-      }
-
-      .hero-card {
-        justify-self: end;
-        width: min(100%, 360px);
-        background: rgba(255, 255, 255, 0.07);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 20px;
-        padding: 1.3rem;
-        backdrop-filter: blur(8px);
-        box-shadow: var(--shadow-soft);
-      }
-
-      .hero-card h3 {
-        margin: 0 0 1rem;
-        color: var(--gold-400);
-        font-size: 0.88rem;
-        text-transform: uppercase;
-        letter-spacing: 0.16rem;
-      }
-
-      .hero-card ul {
-        list-style: none;
-        display: grid;
-        gap: 0.8rem;
-        margin: 0;
-        padding: 0;
-      }
-
-      .hero-card li {
-        display: flex;
-        align-items: center;
-        gap: 0.8rem;
-        color: rgba(255, 255, 255, 0.85);
-      }
-
-      .hero-card li::before {
-        content: "✦";
-        color: var(--gold-400);
-      }
-
-      .history-grid,
-      .location-grid,
-      .contact-grid {
-        display: grid;
-        gap: 1.5rem;
-      }
-
-      .history-copy,
-      .location-card,
-      .contact-card,
-      .rite-card {
-        background: var(--white);
-        border: 1px solid rgba(7, 26, 45, 0.08);
-        border-radius: 22px;
-        box-shadow: var(--shadow-card);
-      }
-
-      .history-copy {
-        padding: clamp(1.5rem, 3vw, 2.5rem);
-      }
-
-      .history-copy p {
-        margin: 0;
-        color: var(--text-700);
-      }
-
-      .history-copy p + p {
-        margin-top: 1rem;
-      }
-
-      .history-quote {
-        margin-top: 1.5rem;
-        padding: 1.1rem 1.3rem;
-        border-left: 4px solid var(--gold-500);
-        border-radius: 14px;
-        background: linear-gradient(135deg, rgba(199, 167, 106, 0.12), rgba(7, 26, 45, 0.02));
-        color: var(--navy-800);
-        font-style: italic;
-      }
-
-      .history-figure {
-        overflow: hidden;
-        border-radius: 22px;
-        min-height: 300px;
-        box-shadow: var(--shadow-card);
-      }
-
-      .history-figure img {
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .rite {
-        background: linear-gradient(180deg, rgba(9, 29, 48, 0.03), rgba(9, 29, 48, 0));
-      }
-
-      .rite-grid {
-        display: grid;
-        gap: 1.25rem;
-      }
-
-      .rite-card {
-        padding: 1.5rem;
-      }
-
-      .rite-icon {
-        display: grid;
-        place-items: center;
-        width: 54px;
-        height: 54px;
-        border-radius: 14px;
-        margin-bottom: 1rem;
-        background: rgba(199, 167, 106, 0.14);
-        color: var(--navy-800);
-        font-size: 1.4rem;
-      }
-
-      .rite-card h3 {
-        margin: 0 0 0.7rem;
-        color: var(--navy-800);
-        font-size: 1.2rem;
-      }
-
-      .rite-card p {
-        margin: 0;
-        color: var(--text-700);
-      }
-
-      .gallery-grid {
-        display: grid;
-        gap: 1rem;
-      }
-
-      .gallery-item {
-        position: relative;
-        overflow: hidden;
-        border-radius: 18px;
-        min-height: 220px;
-        box-shadow: var(--shadow-card);
-      }
-
-      .gallery-item img {
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-      }
-
-      .gallery-item:hover img,
-      .gallery-item:focus-within img {
-        transform: scale(1.05);
-      }
-
-      .gallery-item figcaption {
-        position: absolute;
-        inset: auto 0 0 0;
-        padding: 0.9rem 1rem;
-        background: linear-gradient(180deg, transparent, rgba(7, 26, 45, 0.8));
-        color: var(--white);
-        font-size: 0.76rem;
-        letter-spacing: 0.12rem;
-        text-transform: uppercase;
-      }
-
-      .location-card,
-      .contact-card {
-        padding: clamp(1.5rem, 3vw, 2.2rem);
-      }
-
-      .location-card h3,
-      .contact-card h3 {
-        margin: 0 0 1rem;
-        color: var(--navy-900);
-        font-size: 1.5rem;
-      }
-
-      .location-card p,
-      .contact-card p {
-        margin: 0 0 0.9rem;
-        color: var(--text-700);
-      }
-
-      .map-frame {
-        width: 100%;
-        min-height: 320px;
-        border: 0;
-        border-radius: 18px;
-        box-shadow: var(--shadow-card);
-      }
-
-      .contact-form {
-        display: grid;
-        gap: 1rem;
-      }
-
-      .field {
-        display: grid;
-        gap: 0.5rem;
-      }
-
-      .field label {
-        color: var(--navy-800);
-        font-weight: 700;
-      }
-
-      .field input,
-      .field textarea {
-        width: 100%;
-        border: 1px solid rgba(13, 37, 65, 0.16);
-        border-radius: 12px;
-        background: var(--ice-100);
-        padding: 0.9rem 1rem;
-        color: var(--text-900);
-        transition: border-color 0.25s ease, box-shadow 0.25s ease;
-      }
-
-      .field input:focus,
-      .field textarea:focus {
-        outline: none;
-        border-color: var(--gold-500);
-        box-shadow: 0 0 0 4px rgba(199, 167, 106, 0.12);
-      }
-
-      .field textarea {
-        min-height: 130px;
-        resize: vertical;
-      }
-
-      .site-footer {
-        background: var(--navy-900);
-        color: rgba(255, 255, 255, 0.85);
-        padding: 1.5rem 0;
-      }
-
-      .footer-inner {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-      }
-
-      @media (min-width: 680px) {
-        .site-nav {
-          position: static;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: flex-end;
-          gap: 0.2rem;
-          background: transparent;
-          padding: 0;
-          border: 0;
-          box-shadow: none;
-        }
-
-        .nav-toggle {
-          display: none;
-        }
-
-        .hero-inner {
-          grid-template-columns: 1.25fr 0.75fr;
-          align-items: center;
-        }
-
-        .history-grid,
-        .location-grid,
-        .contact-grid {
-          grid-template-columns: 1.1fr 0.9fr;
-          align-items: center;
-        }
-
-        .gallery-grid {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-
-        .rite-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-
-      @media (min-width: 980px) {
-        .rite-grid {
-          grid-template-columns: repeat(4, minmax(0, 1fr));
-        }
-      }
-
-      @media (max-width: 679px) {
-        .hero {
-          min-height: 560px;
-        }
-
-        .hero-card {
-          width: 100%;
-          justify-self: stretch;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
       <div class="container nav-wrap">
         <a class="brand" href="#top" aria-label="Página inicial">
-          <span class="brand-mark">F</span>
+          <img class="brand-logo" src="logo.png" alt="Logo da Loja Firmeza e Humanidade" />
           <span class="brand-text">
             <strong>Firmeza e Humanidade</strong>
             <small>Loja Nº 002</small>
@@ -605,29 +38,68 @@
     </header>
 
     <main>
-      <section class="hero" id="top">
-        <div class="container hero-inner">
-          <div class="hero-copy">
-            <span class="intro">Tradição &amp; Humanidade</span>
-            <h1>Firmeza e Humanidade - Nº 002</h1>
-            <p>
-              Bem-vindo(a) à nossa Loja Maçônica, onde tradição, fraternidade e elevação moral se encontram em busca de um mundo melhor.
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#contato">Fale Conosco</a>
-              <a class="btn btn-secondary" href="#historia">Conheça Nossa História</a>
-            </div>
-          </div>
+      <section class="hero" id="top" aria-label="Banner principal da Loja">
+        <div class="hero-slider">
+          <article class="slide is-active" style="background-image: url('banner1.png');">
+            <div class="container hero-inner">
+              <div class="hero-copy">
+                <span class="intro">Tradição &amp; Humanidade</span>
+                <h1>Firmeza e Humanidade - Nº 002</h1>
+                <p>
+                  Bem-vindo(a) à nossa Loja Maçônica, onde tradição, fraternidade e elevação moral se encontram em busca de um mundo melhor.
+                </p>
+                <div class="hero-actions">
+                  <a class="btn btn-primary" href="#contato">Fale Conosco</a>
+                  <a class="btn btn-secondary" href="#historia">Conheça Nossa História</a>
+                </div>
+              </div>
 
-          <aside class="hero-card" aria-label="Valores da loja maçônica">
-            <h3>Valores</h3>
-            <ul>
-              <li>Virtude e disciplina</li>
-              <li>Fraternidade ativa</li>
-              <li>Serviço à comunidade</li>
-              <li>Elevação moral</li>
-            </ul>
-          </aside>
+              <aside class="hero-card" aria-label="Valores da loja maçônica">
+                <h3>Valores</h3>
+                <ul>
+                  <li>Virtude e disciplina</li>
+                  <li>Fraternidade ativa</li>
+                  <li>Serviço à comunidade</li>
+                  <li>Elevação moral</li>
+                </ul>
+              </aside>
+            </div>
+          </article>
+
+          <article class="slide" style="background-image: url('banner2.png');">
+            <div class="container hero-inner">
+              <div class="hero-copy">
+                <span class="intro">90 anos de história</span>
+                <h1>Honra, tradições e compromisso maçônico.</h1>
+                <p>
+                  Celebrando a trajetória de uma Loja que fortalece a fraternidade, o estudo e o serviço à comunidade com dedicação e sabedoria.
+                </p>
+                <div class="hero-actions">
+                  <a class="btn btn-primary" href="#contato">Entre em contato</a>
+                  <a class="btn btn-secondary" href="#rito">Conheça o Rito</a>
+                </div>
+              </div>
+
+              <aside class="hero-card" aria-label="Principais pilares da Loja">
+                <h3>Compromisso</h3>
+                <ul>
+                  <li>Respeito à tradição</li>
+                  <li>Elevação do homem</li>
+                  <li>Fraternidade ativa</li>
+                  <li>Serviço à sociedade</li>
+                </ul>
+              </aside>
+            </div>
+          </article>
+        </div>
+
+        <div class="hero-controls" aria-label="Navegação do banner">
+          <button class="slider-btn prev" type="button" aria-label="Banner anterior">‹</button>
+          <div class="slider-dots" aria-label="Seleção de banner">
+            <button class="dot is-active" type="button" aria-label="Ir para o banner 1"></button>
+            <button class="dot" type="button" aria-label="Ir para o banner 2"></button>
+          </div>
+          <button class="slider-btn next" type="button" aria-label="Próximo banner">›</button>
         </div>
       </section>
 
@@ -641,24 +113,25 @@
           <div class="history-grid">
             <article class="history-copy">
               <p>
-                A Loja Firmeza e Humanidade - Nº 002 foi fundada com o propósito de fortalecer laços de fraternidade, estudo e caráter,
-                promovendo uma convivência baseada na ética, no respeito mútuo e na busca constante pela melhoria pessoal.
+                Senhoras e Senhores, meus irmãos maçons, cunhadas, sobrinhos e público em geral aqui presentes neste maravilhoso baile, meu afetuoso boa noite!
+                Me chamo Lindomar Cabral, sou orador da Loja Firmeza e Humanidade 02 e nesta belíssima noite, em que comemoramos os 93 anos de fundação da Soberana Grande Loja Maçônica de Pernambuco, a Loja Maçônica Firmeza e Humanidade Nº 02 está aqui com seus obreiros para celebrar também, com todos vocês, os seus 90 anos de fundação, que será no próximo dia 17 de outubro, profundamente e intimamente ligada à história da nossa Soberana Grande Loja.
               </p>
               <p>
-                Ao longo dos anos, nossa trajetória tem sido marcada por dedicação ao ensino maçônico, à reflexão profunda sobre os princípios
-                universais e à atuação responsável dentro da comunidade, preservando a essência da tradição sem perder a visão do presente.
+                Coube a mim, nesta noite, contar um pouquinho da história desta nonagenária Loja, que se desenha e se alinha com a fundação da Grande Loja Simbólica de Pernambuco em 06 de outubro de 1932, hoje Grande Loja Maçônica de Pernambuco, fundada com o objetivo de buscar autonomia e regularidade maçônica, alinhada aos princípios das Grandes Lojas internacionais, graças à iniciativa de um grupo de maçons pernambucanos. Quando antigos maçons de obediência de diversas lojas, do círculo do Grande Oriente do Brasil e outros da corrente da Grande Loja da Paraíba, desejosos de trabalhar em prol da sublime instituição, resolveram fundar uma nova loja maçônica, apenas três anos depois da criação da Grande Loja de Pernambuco, de forma secreta e não menos audaciosa.
+              </p>
+              <p>
+                Essa nova loja se filiaria a esta obediência, tendo o forte e distintivo título de “FIRMEZA E HUMANIDADE”, em homenagem a uma antiga loja fundada no Estado de Pernambuco, no ano de 1848, sem que até hoje se encontrem registros formais e sua localização exata, apenas registros geracionais. E, com a decisão tomada por 38 irmãos maçons, livres e de bons costumes, tornou-se firme um documento assinado por seus fundadores para a criação, de forma efusiva, da Augusta e Respeitável Loja Simbólica FIRMEZA E HUMANIDADE, aos 12 dias do mês de setembro de 1935, em sua primeira ata de reunião, que recebeu da Grande Loja Simbólica de Pernambuco da época a inscrição Nº 11, ainda de forma secreta e composta de maçons antigos livres aceitos, de acordo com os Landmarks e antigas Constituições e Regulamentos, Leis e Decretos desta potência recém-criada, aos quais prestariam obediência, registrando-se a data de 17 de outubro de 1935 como data oficial de início de suas atividades e trabalhos, trazendo consigo a sua primeira ata constitutiva.
+              </p>
+              <p>
+                Os anos foram se passando, a loja cresceu e fortaleceu-se a cada dia, continuando jurisdicionada à Soberana Grande Loja de Pernambuco, que em 1966 culminou na sua participação na fundação da Confederação da Maçonaria Simbólica do Brasil (CMSB), reforçando sua atuação no cenário maçônico nacional. Até que, em meados da década de 80, mais precisamente no dia 15 de julho de 1982, em reunião na residência do Irmão Gilvan Barbosa Gomes Carneiro, Grão-Mestre Adjunto da época, da Grande Loja de Pernambuco, junto a outros irmãos, motivados por desentendimentos, punições e suspensão de direitos maçônicos, resolveram fundar uma nova potência maçônica em Pernambuco, denominada Grande Loja Maçônica Unida de Pernambuco, da qual também fizeram parte irmãos dissidentes de lojas oriundas da Grande Loja de Pernambuco, entre elas a Loja Firmeza e Humanidade 11, que passaria a numerar-se, nessa nova potência, com o numeral 01.
+              </p>
+              <p>
+                O tempo passou até que, no dia 02 de fevereiro de 2023, alguns membros desta Augusta Loja, em reunião na sede da Grande Loja de Pernambuco, foram recebidos para tratativas de entendimento e a volta desta Loja à sua jurisdição, junto ao Sereníssimo Grão-Mestre Flávio Amorim, ao Irmão Gerson Alves, Grande Secretário de Administração Organizacional, aos irmãos Klayton Wallece, Venerável Mestre da Loja Firmeza e Humanidade da época, Marcelo Noya, Jonas Adriano e Daniel Figueredo, formalizando a volta à casa da Loja Firmeza e Humanidade após 40 anos fora da sua jurisdição, e que inicialmente numerou-se Firmeza e Humanidade 11 Nº 002, e depois, em definitivo, Firmeza e Humanidade Nº 002.
               </p>
               <div class="history-quote">
                 “A Maçonaria é um caminho de elevação, compromisso e solidariedade, construído por homens que desejam servir com honestidade.”
               </div>
             </article>
-
-            <figure class="history-figure">
-              <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
-                alt="Irmandade maçônica reunida"
-              />
-            </figure>
           </div>
         </div>
       </section>
@@ -670,31 +143,84 @@
             <h2>Rito Escocês Antigo e Aceito</h2>
           </div>
 
-          <div class="rite-grid">
-            <article class="rite-card">
-              <div class="rite-icon">✧</div>
-              <h3>Tradição</h3>
-              <p>Preservamos os fundamentos simbólicos, espirituais e morais da maçonaria clássica.</p>
-            </article>
+          <article class="rite-content">
+            <div class="rite-intro">
+              <h3>A História do Rito Escocês Antigo e Aceito</h3>
+              <p><strong>Das origens da Maçonaria especulativa à formação do REAA</strong></p>
+            </div>
 
-            <article class="rite-card">
-              <div class="rite-icon">⚑</div>
-              <h3>Disciplina</h3>
-              <p>Valorizamos a organização, a observância ritualística e o rigor do desenvolvimento pessoal.</p>
-            </article>
+            <div class="rite-paragraph">
+              <h3>Entre os diversos sistemas ritualísticos...</h3>
+              <p>Entre os diversos sistemas ritualísticos que se desenvolveram ao longo da história da Maçonaria, poucos alcançaram a projeção e a influência do Rito Escocês Antigo e Aceito, conhecido universalmente pela sigla REAA. Sua história, entretanto, não começa propriamente na Escócia, nem surgiu de forma completa em um único momento. O rito é resultado de um longo processo histórico, construído a partir da evolução da Maçonaria especulativa, da multiplicação dos graus maçônicos e da organização de diferentes sistemas ritualísticos durante os séculos XVIII e XIX. Para compreender o REAA, é necessário voltar às origens da Maçonaria moderna.</p>
+            </div>
 
-            <article class="rite-card">
-              <div class="rite-icon">✦</div>
-              <h3>Estudo</h3>
-              <p>Promovemos a reflexão constante, o conhecimento e a aplicação dos princípios em nossa vida.</p>
-            </article>
+            <div class="rite-paragraph">
+              <h3>A Maçonaria especulativa</h3>
+              <p>No início do século XVIII, especialmente na Inglaterra, antigas tradições associadas às corporações de construtores passaram por uma profunda transformação. A Maçonaria deixou progressivamente de ser uma organização ligada exclusivamente ao ofício operativo da construção para tornar-se uma instituição de caráter moral, filosófico e iniciático. Em 1717, a criação da Grande Loja de Londres e Westminster é tradicionalmente considerada um marco importante desse processo. A partir daí, a Maçonaria organizada começou a expandir-se pela Europa, chegando à França e posteriormente a diversas outras regiões. Os primeiros sistemas maçônicos possuíam inicialmente poucos graus. Contudo, durante o século XVIII, especialmente na França, ocorreu uma grande expansão dos chamados graus superiores, formando-se uma variedade de ritos, ordens e sistemas de aperfeiçoamento. Foi nesse ambiente de intensa criatividade ritualística que surgiram as raízes históricas do futuro Rito Escocês Antigo e Aceito.</p>
+            </div>
 
-            <article class="rite-card">
-              <div class="rite-icon">☼</div>
-              <h3>Humanidade</h3>
-              <p>O bem coletivo, a solidariedade e o atendimento ao próximo são pilares centrais de nossa jornada.</p>
-            </article>
-          </div>
+            <div class="rite-paragraph">
+              <h3>A tradição dos graus escoceses</h3>
+              <p>Apesar do nome “Escocês”, a formação do REAA não ocorreu exclusivamente na Escócia. Durante o século XVIII, a expressão “graus escoceses” passou a ser utilizada para designar determinados graus maçônicos considerados de aperfeiçoamento e que se apresentavam como possuidores de uma tradição particular. Um dos documentos mais importantes desse período é o chamado Discurso de André Michel de Ramsay, pronunciado por volta de 1736–1737. Ramsay apresentou uma visão idealizada das origens da Maçonaria, relacionando-a simbolicamente às antigas tradições cavalheirescas. Embora muitas das afirmações históricas de Ramsay não sejam aceitas atualmente como fatos históricos, seu discurso teve enorme influência no desenvolvimento dos graus maçônicos posteriores. A partir de então, começaram a proliferar na França sistemas compostos por diversos graus, incorporando elementos simbólicos, filosóficos, bíblicos, cavalheirescos e lendários.</p>
+            </div>
+
+            <div class="rite-paragraph">
+              <h3>O Rito de Perfeição</h3>
+              <p>Um dos sistemas fundamentais para compreender a formação do REAA é o chamado Rito de Perfeição, ou Rito de Heredom, tradicionalmente organizado em 25 graus. Esse sistema desenvolveu-se no ambiente maçônico francês durante o século XVIII e posteriormente chegou às Américas. Em 1761, Étienne Morin recebeu uma patente relacionada aos chamados “Altos Graus” e levou esse sistema para as colônias francesas do Caribe. A partir daí, o sistema sofreu modificações, adaptações e ampliações. No final do século XVIII, os círculos maçônicos de Charleston, na Carolina do Sul, tornaram-se particularmente importantes para a história que levaria à criação do Rito Escocês Antigo e Aceito.</p>
+            </div>
+
+            <div class="rite-paragraph">
+              <h3>Charleston e o nascimento do sistema de 33 graus</h3>
+              <p>Em 1801, ocorreu um dos acontecimentos fundamentais da história do REAA. Em Charleston, foi estabelecido o Supremo Conselho do Grau 33, que passou a organizar um sistema composto por 33 graus, estruturado sobre os três graus simbólicos da Maçonaria e os graus filosóficos e de aperfeiçoamento que lhes sucedem. O novo sistema recebeu a denominação: “Ancient and Accepted Scottish Rite of Freemasonry” — em português, Rito Escocês Antigo e Aceito. A criação desse sistema representou um importante esforço de organização dos numerosos graus que haviam surgido durante o século XVIII. Os primeiros 25 graus do antigo Rito de Perfeição foram incorporados e ampliados, chegando-se à estrutura tradicional de 33 graus. É importante compreender, contudo, que os 33 graus não significam 33 graus de iniciação no mesmo sentido dos três graus simbólicos. O sistema é estruturado em diferentes níveis de estudo, aperfeiçoamento e compreensão filosófica.</p>
+            </div>
+
+            <div class="rite-paragraph">
+              <h3>A chegada à Europa</h3>
+              <p>Depois de sua organização nos Estados Unidos, o sistema começou a retornar ao continente europeu. Um dos personagens fundamentais nesse processo foi Alexandre François Auguste de Grasse-Tilly, que teve importante participação na implantação e expansão do Rito na França. Em 1804, foi estabelecido em Paris um Supremo Conselho ligado ao sistema, contribuindo decisivamente para sua consolidação no continente europeu. A partir da França, o Rito Escocês Antigo e Aceito espalhou-se progressivamente por diversos países, assumindo diferentes características administrativas e ritualísticas conforme as tradições maçônicas locais.</p>
+            </div>
+
+            <div class="degrees-wrap">
+              <div class="degrees-header">
+                <h3>Os 33 graus</h3>
+              </div>
+              <div class="degree-grid">
+                <div class="degree-card"><span>1º</span> Aprendiz</div>
+                <div class="degree-card"><span>2º</span> Companheiro</div>
+                <div class="degree-card"><span>3º</span> Mestre</div>
+                <div class="degree-card"><span>4º ao 14º</span> Graus de Aperfeiçoamento</div>
+                <div class="degree-card"><span>15º ao 18º</span> Graus Capitulares</div>
+                <div class="degree-card"><span>19º ao 30º</span> Graus Filosóficos</div>
+                <div class="degree-card"><span>31º e 32º</span> Graus Administrativos</div>
+                <div class="degree-card highlight"><span>33º</span> Soberano Grande Inspetor Geral</div>
+              </div>
+              <p class="degree-note">A estrutura tradicional do REAA é composta por: Maçonaria Simbólica, graus de aperfeiçoamento, capitulares, filosóficos, administrativos e o grau supremo. Os nomes e conteúdos dos graus podem apresentar diferenças conforme a jurisdição, o ritual utilizado e a tradição obediencial.</p>
+            </div>
+
+            <div class="rite-paragraph">
+              <h3>O simbolismo do REAA</h3>
+              <p>O Rito Escocês Antigo e Aceito desenvolveu uma extraordinária riqueza simbólica. Seus ensinamentos utilizam elementos provenientes de diferentes tradições culturais e filosóficas, incluindo referências bíblicas, tradições do Templo de Salomão, simbolismo medieval, cavalheiresco, hermético e filosófico. Entretanto, seu propósito não deve ser compreendido simplesmente como uma coleção de histórias ou lendas. Cada grau procura apresentar ao iniciado uma perspectiva simbólica sobre o aperfeiçoamento humano. Virtudes como justiça, prudência, temperança, fortaleza, liberdade, igualdade, fraternidade, tolerância, responsabilidade e busca pela verdade aparecem sob diferentes formas ao longo da jornada. Assim, a progressão pelos graus pode ser compreendida como uma representação simbólica de uma caminhada de aperfeiçoamento intelectual, moral e espiritual.</p>
+            </div>
+
+            <div class="rite-paragraph">
+              <h3>O REAA no Brasil</h3>
+              <p>No Brasil, o Rito Escocês Antigo e Aceito tornou-se um dos sistemas maçônicos de maior importância e difusão. Sua história brasileira está profundamente relacionada ao desenvolvimento das estruturas maçônicas nacionais durante o século XIX. A influência francesa, os contatos com a Maçonaria europeia e a organização progressiva dos Supremos Conselhos contribuíram para a expansão do Rito no território brasileiro. Com o passar do tempo, o REAA consolidou-se em diversas Potências e corpos filosóficos, adquirindo características próprias dentro da tradição maçônica brasileira. Hoje, é um dos ritos mais praticados no país.</p>
+            </div>
+
+            <div class="rite-paragraph">
+              <h3>Uma tradição construída ao longo do tempo</h3>
+              <p>A história do Rito Escocês Antigo e Aceito não pode ser reduzida a uma única data, um único fundador ou uma única origem. Ele é resultado de um processo histórico complexo, no qual diferentes tradições maçônicas, graus, sistemas e personagens contribuíram para sua formação. Seu nome pode sugerir uma origem exclusivamente escocesa, mas sua construção histórica envolve principalmente a Maçonaria britânica, francesa e norte-americana, especialmente os desenvolvimentos ocorridos durante o século XVIII e a organização definitiva do sistema de 33 graus no início do século XIX. Por isso, estudar o REAA é também estudar a própria evolução da Maçonaria moderna.</p>
+            </div>
+
+            <div class="rite-paragraph">
+              <h3>O significado da jornada</h3>
+              <p>Mais do que uma sequência de 33 graus, o Rito Escocês Antigo e Aceito pode ser compreendido como uma grande construção simbólica. O Aprendiz começa sua jornada aprendendo a trabalhar sobre si mesmo. O Companheiro amplia seus conhecimentos e sua capacidade de compreender o mundo. O Mestre confronta os grandes temas da existência, da perda, da transformação e da continuidade. Nos graus posteriores, o maçom é convidado a aprofundar questões relacionadas à justiça, à ética, à liberdade, à responsabilidade, à verdade e ao sentido da existência humana. A construção exterior transforma-se, portanto, em uma construção interior. O templo deixa de ser apenas um espaço físico. Ele passa a representar o próprio ser humano. E as ferramentas deixam de ser apenas instrumentos de trabalho. Transformam-se em símbolos de uma disciplina permanente de aperfeiçoamento.</p>
+            </div>
+
+            <div class="rite-paragraph">
+              <h3>Conclusão</h3>
+              <p>O Rito Escocês Antigo e Aceito é fruto de séculos de desenvolvimento da tradição maçônica. Sua história passa pela Maçonaria especulativa do século XVIII, pelos graus escoceses, pelos sistemas franceses de altos graus, pelo Rito de Perfeição, pelas experiências maçônicas nas Américas e pela organização dos Supremos Conselhos no início do século XIX. Sua grandeza não está apenas na quantidade de graus que compõem sua estrutura, mas na profundidade da reflexão que esses graus procuram provocar. O verdadeiro valor da jornada não está em simplesmente subir de grau, mas em permitir que o homem se torne melhor à medida que compreende aquilo que cada etapa procura ensinar. Porque, no fim, toda grande obra maçônica possui o mesmo destino: o aperfeiçoamento do homem para que, aperfeiçoando a si mesmo, possa contribuir para o aperfeiçoamento da sociedade.</p>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -807,44 +333,6 @@
       </div>
     </footer>
 
-    <script>
-      (function () {
-        const toggleButton = document.querySelector('.nav-toggle');
-        const nav = document.getElementById('siteNav');
-        const navLinks = document.querySelectorAll('.site-nav a');
-
-        toggleButton.addEventListener('click', function () {
-          const isOpen = nav.classList.toggle('is-open');
-          toggleButton.setAttribute('aria-expanded', String(isOpen));
-        });
-
-        navLinks.forEach(function (link) {
-          link.addEventListener('click', function () {
-            nav.classList.remove('is-open');
-            toggleButton.setAttribute('aria-expanded', 'false');
-          });
-        });
-
-        document.getElementById('anoAtual').textContent = new Date().getFullYear();
-
-        document.getElementById('formContato').addEventListener('submit', function (event) {
-          event.preventDefault();
-
-          const nome = document.getElementById('nome').value.trim();
-          const mensagem = document.getElementById('mensagem').value.trim();
-
-          if (!nome || !mensagem) {
-            alert('Por favor, preencha seu nome e sua mensagem.');
-            return;
-          }
-
-          const textoFormatado = `Olá! Meu nome é ${nome}. ${mensagem}`;
-          const urlWhatsApp = `https://wa.me/558187251498?text=${encodeURIComponent(textoFormatado)}`;
-
-          window.open(urlWhatsApp, '_blank');
-          this.reset();
-        });
-      })();
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
